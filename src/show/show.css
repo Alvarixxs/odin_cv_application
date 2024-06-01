@@ -1,0 +1,51 @@
+
+.preview {
+    min-height: 100vh;
+}
+
+.preview, .personal-details-show, .section-show {
+    padding: 2em;
+}
+
+.personal-details-show {
+    background-color: #31473A;
+    text-align: center;
+    color: white;
+}
+
+.personal-details-div {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.personal-details-show, .section-show {
+    gap: 1em;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid gray; /* optional, for a slight border */
+    border-left: 1px solid gray; /* optional, for a slight border */
+}
+
+.personal-details-show-2 {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+.section-show {
+    background-color: #F1F1F2;
+}
+
+.title-show {
+    background-color: white;
+    text-align: center;
+    color: #31473A;
+}
+
+.content-show {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 0 2em;
+    color: black;
+}

@@ -7,11 +7,32 @@ import ExperienceInput from "../experienceInput/ExperienceInput.jsx";
 function CVdata({userFullName, setFullName, email, setEmail, tel, setTel, address, setAddress, educations, addEducation, updateEducation, experiences, addExperience, updateExperience}) {
   const [activeIndex, setActiveIndex] = useState(0)
 
+  const [isEditEducation, setEditEducation] = useState(false)
+  const [activeIndexEducation, setActiveIndexEducation] = useState(-1)
+
+  const [isEditExperience, setEditExperience] = useState(false)
+  const [activeIndexExperience, setActiveIndexExperience] = useState(-1)
+
+  function toggleHide() {
+    setActiveIndex(-1)
+    setEditEducation(false)
+    setActiveIndexEducation(-1)
+    setEditExperience(false)
+    setActiveIndexExperience(-1)
+  }
+
   return (
-    <section>
+    <section className="cv-data">
       <PersonalDetailsInput
         isActive={(activeIndex===0)}
-        setActive={()=>setActiveIndex(0)}
+        setActive={()=> {
+          setActiveIndex(0)
+          setActiveIndexEducation(-1)
+          setActiveIndexExperience(-1)
+          setEditEducation(false)
+          setEditExperience(false)
+        }}
+        toggleHide={toggleHide}
         userFullName={userFullName}
         setFullName={setFullName}
         email={email}
@@ -24,7 +45,16 @@ function CVdata({userFullName, setFullName, email, setEmail, tel, setTel, addres
       </PersonalDetailsInput>
       <EducationInput
         isActive={(activeIndex===1)}
-        setActive={()=>setActiveIndex(1)}
+        setActive={()=> {
+          setActiveIndex(1)
+          setActiveIndexExperience(-1)
+          setEditExperience(false)
+        }}
+        toggleHide={toggleHide}
+        isEdit={isEditEducation}
+        setEdit={setEditEducation}
+        activeIndex={activeIndexEducation}
+        setActiveIndex={setActiveIndexEducation}
         educations={educations}
         addEducation={addEducation}
         updateEducation={updateEducation}
@@ -32,9 +62,19 @@ function CVdata({userFullName, setFullName, email, setEmail, tel, setTel, addres
       </EducationInput>
       <ExperienceInput
         isActive={activeIndex===2}
-        setActive={()=>setActiveIndex(2)}
+        setActive={()=> {
+          setActiveIndex(2)
+          setActiveIndexEducation(-1)
+          setEditEducation(false)
+        }}
+        toggleHide={toggleHide}
+        isEdit={isEditExperience}
+        setEdit={setEditExperience}
+        activeIndex={activeIndexExperience}
+        setActiveIndex={setActiveIndexExperience}
         experiences={experiences}
         addExperience={addExperience}
+        updateExperience={updateExperience}
       ></ExperienceInput>
     </section>
   )

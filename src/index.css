@@ -1,3 +1,11 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -5,8 +13,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  background-color: #EDF4F2;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -27,8 +34,23 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 2em;
   line-height: 1.1;
+}
+
+input, textarea {
+  background-color: white;
+  color: #002C54;
+  padding: 0.5em;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid transparent;
+  transition: border-color 0.25s;
+  margin-bottom: 1em;
+}
+
+input:focus, textarea:focus {
+  border-color: #646cff;
 }
 
 button {
@@ -38,7 +60,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #31473A;
   cursor: pointer;
   transition: border-color 0.25s;
 }

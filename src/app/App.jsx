@@ -3,16 +3,17 @@ import './App.css'
 import CVdata from "../fillout/cVdata/CVdata.jsx";
 import Preview from "../show/preview/preview.jsx";
 import { v4 as uuidv4 } from 'uuid';
+import Example from "../resources/cv.json"
 
 function App() {
-  const [userFullName, setFullName] = useState('name and surname')
-  const [email, setEmail] = useState('email@example.com')
-  const [tel, setTel] = useState('111 111 111')
-  const [address, setAddress] = useState('Address, Address')
+  const [userFullName, setFullName] = useState(Example.personal_info.name)
+  const [email, setEmail] = useState(Example.personal_info.email)
+  const [tel, setTel] = useState(Example.personal_info.phone)
+  const [address, setAddress] = useState(Example.personal_info.address)
 
-  const [educations, setEducations] = useState([{key: uuidv4(), school: 'school', degree: 'degree', startDate: 'startDate', endDate: 'endDate', location: 'location'}])
+  const [educations, setEducations] = useState(Example.education)
 
-  const [experiences, setExperiences] = useState([{key: uuidv4(), company: 'company', posTitle: 'position title', startDate: 'startDate', endDate: 'endDate', location: 'location', descr: 'description'}])
+  const [experiences, setExperiences] = useState(Example.professional_experience)
 
   function addEducation(school, degree, startDate, endDate, location) {
     let newEducations = [...educations]
@@ -89,7 +90,7 @@ function App() {
         address={address}
         educations={educations}
         experiences={experiences}
-        >
+      >
       </Preview>
     </>
   )

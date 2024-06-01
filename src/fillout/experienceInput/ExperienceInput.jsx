@@ -1,21 +1,36 @@
-import {useState} from "react";
 import ListExperienceInput from "./ListExperienceInput.jsx";
 import NewExperienceInput from "./NewExperienceInput.jsx";
+import '../fillout.css'
+import Icon from "@mdi/react";
+import {mdiBriefcase, mdiChevronLeft, mdiSchool} from "@mdi/js";
 
-function ExperienceInput({isActive, setActive, experiences, addExperience}) {
-  const [isEdit, setEdit] = useState(false);
+
+function ExperienceInput({isActive, setActive, toggleHide, isEdit, setEdit, activeIndex, setActiveIndex, experiences, addExperience, updateExperience}) {
 
   function toggleEdit() {
     setEdit(!isEdit);
+    setActiveIndex(-1);
   }
 
   return (
-    <div onClick={isActive ? null: setActive}>
-      <h1>Experience</h1>
+    <section className="section-input">
+      <div className="header-input hoverable" onClick={isActive ? toggleHide : setActive}>
+        <div className="title-input">
+          <Icon path={mdiBriefcase} size={1}/>
+          <p>Experience</p>
+        </div>
+        <div className="icon">
+          <Icon path={mdiChevronLeft} size={1}/>
+        </div>
+      </div>
       {isActive ? (
-        <div>
+        <div className="preview-input">
           <ListExperienceInput
+            activeIndex={activeIndex}
+            setActiveIndex={setActiveIndex}
+            toggleEdit={() => setEdit(false)}
             experiences={experiences}
+            updateExperience={updateExperience}
           >
           </ListExperienceInput>
           {isEdit ? (
@@ -25,11 +40,13 @@ function ExperienceInput({isActive, setActive, experiences, addExperience}) {
             >
             </NewExperienceInput>
           ) : (
-            <button onClick={toggleEdit}>+ Experience</button>
+            <div>
+              <button onClick={toggleEdit}>+ Experience</button>
+            </div>
           )}
         </div>
       ) : null}
-    </div>
+    </section>
   )
 }
 

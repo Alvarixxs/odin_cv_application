@@ -1,5 +1,61 @@
 
 form {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+}
+
+.cv-data {
+    min-height: 100vh;
+}
+
+.cv-data, .section-input {
+    padding: 2em;
+    gap: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-input, .icon, .title-input {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    flex: 1 1 auto;
+    justify-content: right;
+}
+
+.title-input {
+    font-size: 1.5em;
+    font-weight: bold;
+    gap: 0.5em;
+}
+
+.section-input {
+    color: black;
+    background-color: #F1F1F2;
+    border-radius: 15px;
+    border: 1px solid gray;
+}
+
+.preview-input {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.per-input {
+    padding: 1em;
+    border-radius: 15px;
+    background-color: lightgray;
+}
+
+.button-container-input {
+    gap: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+.hoverable:hover {
+    cursor: pointer;
 }

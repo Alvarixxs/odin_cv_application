@@ -13,20 +13,24 @@ function NewEducationInput({toggleEdit, addEducation}) {
   }
 
   return (
-    <form>
-      <label htmlFor="input-school">School</label>
-      <input type="text" id="input-school" value={school} onChange={(e) => setSchool(e.target.value)}/>
-      <label htmlFor="input-degree">Degree</label>
-      <input type="text" id="input-degree" value={degree} onChange={(e) => setDegree(e.target.value)}/>
-      <label htmlFor="input-startDate">Start date</label>
-      <input id="input-startDate" type="text" value={startDate} onChange={(e) => setStartDate(e.target.value)}/>
-      <label htmlFor="input-endDate">End date</label>
-      <input type="text" id="input-endDate" value={endDate} onChange={(e) => setEndDate(e.target.value)}/>
-      <label htmlFor="input-location">Location</label>
-      <input type="text" id="input-location" value={location} onChange={(e) => setLocation(e.target.value)}/>
-      <button type="button" onClick={onSave}>Save</button>
-      <button type="button" onClick={toggleEdit}>Cancel</button>
-    </form>
+    <div className="per-input">
+      <form>
+        <label htmlFor="input-school">School</label>
+        <input type="text" id="input-school" value={school} onChange={(e) => setSchool(e.target.value)}/>
+        <label htmlFor="input-degree">Degree</label>
+        <input type="text" id="input-degree" value={degree} onChange={(e) => setDegree(e.target.value)}/>
+        <label htmlFor="input-startDate">Start date</label>
+        <input id="input-startDate" type="text" value={startDate} onChange={(e) => setStartDate(e.target.value)}/>
+        <label htmlFor="input-endDate">End date</label>
+        <input type="text" id="input-endDate" value={endDate} onChange={(e) => setEndDate(e.target.value)}/>
+        <label htmlFor="input-location">Location</label>
+        <input type="text" id="input-location" value={location} onChange={(e) => setLocation(e.target.value)}/>
+        <div className="button-container-input">
+          <button type="button" onClick={toggleEdit}>Cancel</button>
+          <button type="button" onClick={onSave}>Save</button>
+        </div>
+      </form>
+    </div>
   )
 }
 
