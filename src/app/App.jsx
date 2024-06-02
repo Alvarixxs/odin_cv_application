@@ -65,6 +65,24 @@ function App() {
     setExperiences(newExperiences)
   }
 
+  function onClear() {
+    setFullName('')
+    setEmail('')
+    setTel('')
+    setAddress('')
+    setEducations([])
+    setExperiences([])
+  }
+
+  function onLoad() {
+    setFullName(Example.personal_info.name)
+    setEmail(Example.personal_info.email)
+    setTel(Example.personal_info.phone)
+    setAddress(Example.personal_info.address)
+    setEducations(Example.education)
+    setExperiences(Example.professional_experience)
+  }
+
   return (
     <>
       <CVdata
@@ -82,6 +100,8 @@ function App() {
         experiences={experiences}
         addExperience={addExperience}
         updateExperience={updateExperience}
+        onClear={onClear}
+        onLoad={onLoad}
       ></CVdata>
       <Preview
         userFullName={userFullName}

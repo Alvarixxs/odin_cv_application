@@ -4,8 +4,8 @@ import EducationInput from "../educationInput/EducationInput.jsx";
 import {useState} from "react";
 import ExperienceInput from "../experienceInput/ExperienceInput.jsx";
 
-function CVdata({userFullName, setFullName, email, setEmail, tel, setTel, address, setAddress, educations, addEducation, updateEducation, experiences, addExperience, updateExperience}) {
-  const [activeIndex, setActiveIndex] = useState(0)
+function CVdata({userFullName, setFullName, email, setEmail, tel, setTel, address, setAddress, educations, addEducation, updateEducation, experiences, addExperience, updateExperience, onClear, onLoad}) {
+  const [activeIndex, setActiveIndex] = useState(-1)
 
   const [isEditEducation, setEditEducation] = useState(false)
   const [activeIndexEducation, setActiveIndexEducation] = useState(-1)
@@ -76,6 +76,10 @@ function CVdata({userFullName, setFullName, email, setEmail, tel, setTel, addres
         addExperience={addExperience}
         updateExperience={updateExperience}
       ></ExperienceInput>
+      <div className="button-container-input">
+        <button onClick={onClear}>Clear resume.</button>
+        <button onClick={onLoad}>Load example.</button>
+      </div>
     </section>
   )
 }
