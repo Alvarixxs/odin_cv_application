@@ -11,7 +11,7 @@ function ListExperienceInput({activeIndex, setActiveIndex, toggleEdit, experienc
             toggleEdit()
           }}
           experience={experience}
-          updateExperience={(company,posTitle,startDate, endDate, location, descr)=>updateExperience(company,posTitle,startDate,endDate,location,descr)}
+          updateExperience={(company,posTitle,startDate, endDate, location, descr)=>updateExperience(experience,company,posTitle,startDate,endDate,location,descr)}
         >
         </SingleExperienceInput>)}
     </div>
