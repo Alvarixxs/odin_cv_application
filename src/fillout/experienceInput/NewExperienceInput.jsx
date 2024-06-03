@@ -15,9 +15,9 @@ function NewExperienceInput({toggleEdit, addExperience}) {
   return (
     <div className="per-input">
       <form>
-        <label htmlFor="input-company">School</label>
+        <label htmlFor="input-company">Company</label>
         <input type="text" id="input-company" value={company} onChange={(e) => setCompany(e.target.value)}/>
-        <label htmlFor="input-posTitle">Degree</label>
+        <label htmlFor="input-posTitle">Position title</label>
         <input type="text" id="input-posTitle" value={posTitle} onChange={(e) => setPosTitle(e.target.value)}/>
         <label htmlFor="input-startDate">Start date</label>
         <input id="input-startDate" type="text" value={startDate} onChange={(e) => setStartDate(e.target.value)}/>
